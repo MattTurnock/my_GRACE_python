@@ -1,0 +1,24 @@
+PRODUCER AGENCY               : NASA                                            
+PRODUCER INSTITUTION          : JPL                                             
+FILE TYPE ipOSCFQF            : 11                                              
+FILE FORMAT 0=BINARY 1=ASCII  : 1                                               
+NUMBER OF HEADER RECORDS      : 21                                              
+SOFTWARE VERSION              : $Id: clk1b2uso1b.c 1.8 06/11/09 17:35:43 glk  $ 
+SOFTWARE LINK TIME            : @(#) 2012-08-31 10:49:15 rl02  g3               
+REFERENCE DOCUMENTATION       : GRACE Level 1 Software Handbook                 
+SATELLITE NAME                : GRACE B                                         
+SENSOR NAME                   : IPU                                             
+TIME EPOCH (GPS TIME)         : 2000-01-01 12:00:00                             
+TIME FIRST OBS(SEC PAST EPOCH): 443015700.000000 (2014-01-14 23:55:00.00)       
+TIME LAST OBS(SEC PAST EPOCH) : 443102700.000000 (2014-01-16 00:05:00.00)       
+NUMBER OF DATA RECORDS        : 2                                               
+PRODUCT CREATE START TIME(UTC): 2014-01-24 08:31:00 by rl02                     
+PRODUCT CREATE END TIME(UTC)  : 2014-01-24 08:31:00 by rl02                     
+FILESIZE (BYTES)              : Not Determined because output is stdout         
+FILENAME                      : Standard_Out                                    
+PROCESS LEVEL (1A OR 1B)      : 1B                                              
+INPUT FILE NAME               : CLK1B<-CLK1B_2014-01-15_B_02.dat                
+INPUT FILE TIME TAG (UTC)     : CLK1B<-2014-01-24 08:29:01 by rl02              
+END OF HEADER                                                                   
+443015700 B 4 4832099.075259668 24527734906.01807 32703646541.35743  00000010
+443102700 B 4 4832099.075259668 24527734906.01807 32703646541.35743  00000001

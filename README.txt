@@ -21,3 +21,7 @@ The following notes represent the easiest way to do it on a unix system
 6) chaos package can be upgraded by simply reinstalling the new one as described above
 
 
+NOTE: Use anaconda-navigator command to bring up some useful stuff
+      Also use source activate my_GRACE_python to activate
+
+

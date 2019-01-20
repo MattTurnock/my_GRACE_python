@@ -1,0 +1,20 @@
+PRODUCER AGENCY               : NASA                                            
+PRODUCER INSTITUTION          : JPL                                             
+FILE TYPE ipIHK1XF            : 20                                              
+FILE FORMAT 0=BINARY 1=ASCII  : 1                                               
+NUMBER OF HEADER RECORDS      : 19                                              
+SOFTWARE VERSION              : $Id: WriteZeroHeader.c 1.5 04/05/13 14:51:52  $ 
+SOFTWARE LINK TIME            : @(#) 2013-04-08 09:56:35 rl02  g3               
+REFERENCE DOCUMENTATION       : GRACE Level 1 Software Handbook                 
+SATELLITE NAME                : GRACE B                                         
+SENSOR NAME                   : Nodef                                           
+TIME EPOCH (GPS TIME)         : 2000-01-01 12:00:00                             
+TIME FIRST OBS(SEC PAST EPOCH): 508680000.000000 (2016-02-14 00:00:00.00)       
+TIME LAST OBS(SEC PAST EPOCH) : 508680000.000000 (2016-02-14 00:00:00.00)       
+NUMBER OF DATA RECORDS        : 0                                               
+PRODUCT CREATE START TIME(UTC): 2016-02-29 18:52:00 by rl02                     
+PRODUCT CREATE END TIME(UTC)  : 2016-02-29 18:52:00 by rl02                     
+FILESIZE (BYTES)              : Not Determined because output is stdout         
+FILENAME                      : Standard_Out                                    
+PROCESS LEVEL (1A OR 1B)      : 1B                                              
+END OF HEADER                                                                   

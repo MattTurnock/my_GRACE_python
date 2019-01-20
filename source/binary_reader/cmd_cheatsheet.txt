@@ -1,0 +1,10 @@
+to convert from binary XXX.dat files from grace (for more info see README in the reader):
+	./Bin2AsciiLevel1 -binfile XXX.dat | tee XXXas.txt
+
+	--> -binfule XXX.dat specifies to file to convert
+	--> | tee XXXas.txt outputs ascii file and terminal display to XXas.txt file
+
+See p38 of the GRACE L1B handbook for the data format, but bear in mind the time_ref and GRACE_id are switched. Therefore the columns look as follows:
+time_intg	time_frac	GRACE_id	time_ref	MfvX_RAW	mfvY_RAW	mfvZ_RAW	torque1A	torque2A	torque3A	torque1B	torque2B	torque3B	MF_BCalX	MF_BCalY	MF_BCalZ	torque_cal	qualfig
+
+^ the important ones are the MfvX_raw etc --> these are the components of the Earth magnetic field in microT
