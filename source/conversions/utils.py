@@ -15,6 +15,7 @@ import pandas as pd
 
 from astropy.coordinates import cartesian_to_spherical, spherical_to_cartesian
 from astropy import units as u
+from astropy import time
 
 
 #######################################################################################################################
@@ -65,9 +66,49 @@ def spherical_to_cartesian_custom(r, latIn, lon, withUnits=False, inputColat=Fal
 
     return x, y, z
 
+def add_spherical_dataframe(GRACE_dataFrame, returnColat=False):
+    """
+    Function to append spherical coordinates to the GNV dataframe provided by GRACE data. Can append either latitudes or
+    colatitudes along with radius and longitude
+    :param GRACE_dataFrame: The GRACE dataframe for GNV constructed using the GRACE_data class
+    :param returnColat: Boolean to determine if column should be latitude or colatitude
+    :return:
+    """
+    if returnColat:
+        latColHeader = "Colatitudes [rad]"
+    else:
+        latColHeader = "Latitudes [rad]"
+
+    GRACE_dataFrameSpherical = pd.DataFrame.copy(GRACE_dataFrame)
+    spherical = np.zeros((len(GRACE_dataFrameSpherical), 3))
+
+    xs = np.array(GRACE_dataFrameSpherical.loc[:]["xpos [m]"])
+    ys = np.array(GRACE_dataFrameSpherical.loc[:]["ypos [m]"])
+    zs = np.array(GRACE_dataFrameSpherical.loc[:]["zpos [m]"])
+
+    for i in range(len(spherical)):
+        spherical[i] = cartesian_to_spherical_custom(xs[i], ys[i], zs[i], withUnits=False, returnColat=returnColat)
+
+    radii = spherical[:,0]
+    lats = spherical[:,1]
+    lons = spherical[:,2]
+
+    GRACE_dataFrameSpherical["Orbit radius [m]"] = radii
+    GRACE_dataFrameSpherical[latColHeader] = lats
+    GRACE_dataFrameSpherical["Longitudes [rad]"] = lons
+
+    return GRACE_dataFrameSpherical
 
 
+def add_mjd_dataframe(GRACE_dataFrame):
+    GRACE_dataFrameMJD = pd.DataFrame.copy(GRACE_dataFrame)
 
+    times = GRACE_dataFrameMJD.loc[:]["gps_time [s]"]
+    times = time.Time(times, format='gps')
+    timesMJD = times.mjd
+    GRACE_dataFrameMJD["mjd_time [days]"] = timesMJD
+
+    return GRACE_dataFrameMJD
 #######################################################################################################################
 
 class GRACE_data:
