@@ -109,6 +109,22 @@ def add_mjd_dataframe(GRACE_dataFrame):
     GRACE_dataFrameMJD["mjd_time [days]"] = timesMJD
 
     return GRACE_dataFrameMJD
+
+def mjd_mjd2000_converter(time, inFormat='mjd'):
+    """
+    Function to convert between mjd and mjd200. inFormat is 'mjd' for mjd->mjd200, and 'mjd2000' for inverse
+    :param time: Input time
+    :param inFormat: Input time format ('mjd' or 'mjd2000')
+    :return newtime: The new time after conversion
+    """
+    diff = 51544.5
+    if inFormat == 'mjd':
+        newtime = time - diff
+    if inFormat == 'mjd2000':
+        newtime = time + diff
+
+    return newtime
+
 #######################################################################################################################
 
 class GRACE_data:

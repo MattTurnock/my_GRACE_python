@@ -37,7 +37,7 @@ for dataType in exampleDataClasses:
 
 GNV_dataClass = exampleDataClasses["GNV"]
 GNV_dataFrame = GNV_dataClass.dataFrame
-GNV_dataFrame = add_spherical_dataframe(GNV_dataFrame, returnColat=False)
+GNV_dataFrame = add_spherical_dataframe(GNV_dataFrame, returnColat=True)
 # print(GNV_dataFrame.loc[0])
 
 # NEED TO CONVERT TIMES TO MJD
